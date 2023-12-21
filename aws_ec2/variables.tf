@@ -43,7 +43,7 @@ variable "volume_type" {
   type = string
   default = "gp3"
   validation {
-    condition = can(regex("gp3|gp2"))
+    condition = can(regex("gp3|gp2", var.volume_type))
     error_message = "Only gp3 and gp2 allowed"
   }
 }
