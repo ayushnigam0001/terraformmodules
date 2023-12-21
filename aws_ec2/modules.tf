@@ -15,6 +15,11 @@ resource "aws_instance" "ec2_server" {
   tags = {
     "Name" = var.server_name
   }
+  metadata_options {
+    http_endpoint               = "enabled"
+    http_put_response_hop_limit = 2
+    http_tokens                 = "required"
+  }
 }
 
 resource "aws_ebs_volume" "this" {
