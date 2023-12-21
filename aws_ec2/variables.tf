@@ -35,7 +35,10 @@ variable "server_name" {
 }
 
 variable "ebs_block_devices" {
-  type = list(map(string))
+  type = list(object({
+    device_name = string
+    volume_size = number
+  }))
   default = []
 }
 
