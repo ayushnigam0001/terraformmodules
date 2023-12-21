@@ -7,9 +7,33 @@ resource "aws_instance" "ec2_server" {
     network_interface_id = aws_network_interface.eni.id
     device_index         = 0
   }
+  root_block_device {
+    delete_on_termination = true
+      volume_type           = ""
+      iops                  = ""
+      throughput            = ""
+      volume_size           = ""
+  }
   tags = {
     "Name" = var.server_name
   }
+}
+
+resource "aws_ebs_volume" "this" {
+  count             = length(var.ebs_block_devices)
+  size              = var.ebs_block_devices[count.index].volume_size
+  type              = var.volume_type
+  availability_zone = var.availability_zone
+  tags = {
+    "Name" : "${var.server_name}-NonRoot-${count.index}"
+  }
+}
+
+resource "aws_volume_attachment" "this" {
+  count       = length(var.ebs_block_devices)
+  device_name = var.ebs_block_devices[count.index].device_name
+  instance_id = aws_instance.ec2_server.id
+  volume_id   = aws_ebs_volume.this[count.index].id
 }
 
 resource "aws_network_interface" "eni" {

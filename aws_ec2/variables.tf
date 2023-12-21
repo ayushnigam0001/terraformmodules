@@ -33,3 +33,25 @@ variable "security_group_list" {
 variable "server_name" {
   type = string
 }
+
+variable "ebs_block_devices" {
+  type = list(map(string))
+  default = []
+}
+
+variable "volume_type" {
+  type = string
+  default = "gp3"
+  validation {
+    condition = can(regex("gp3|gp2"))
+    error_message = "Only gp3 and gp2 allowed"
+  }
+}
+
+variable "availability_zone" {
+  type = string
+}
+
+variable "volume_size" {
+  type = number
+}
