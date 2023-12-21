@@ -53,6 +53,10 @@ variable "volume_type" {
 
 variable "availability_zone" {
   type = string
+  validation {
+    condition = can(regex("[abcd]$", var.availability_zone))
+    error_message = "Enter Valid AZ"
+  }
 }
 
 variable "volume_size" {
