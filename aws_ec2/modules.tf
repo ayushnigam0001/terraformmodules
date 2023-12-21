@@ -11,6 +11,9 @@ resource "aws_instance" "ec2_server" {
     delete_on_termination = true
       volume_type           = var.volume_type
       volume_size           = var.volume_size
+      tags = {
+        "Name" = "${var.server_name}-RootVolume" 
+      }
   }
   tags = {
     "Name" = var.server_name
@@ -28,7 +31,7 @@ resource "aws_ebs_volume" "this" {
   type              = var.volume_type
   availability_zone = var.availability_zone
   tags = {
-    "Name" : "${var.server_name}-NonRoot-${count.index}"
+    "Name" = "${var.server_name}-NonRoot-${count.index}"
   }
 }
 
