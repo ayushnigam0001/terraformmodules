@@ -59,6 +59,6 @@ variable "availability_zone" {
   }
 }
 
-variable "volume_size" {
+variable "root_volume_size" {
   type = number
 }
