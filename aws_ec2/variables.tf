@@ -8,7 +8,7 @@ variable "ami_id" {
 variable "instance_type" {
   type = string
   validation {
-    condition     = can(regex("t2.micro|t2.medium", var.instance_type))
+    condition     = can(regex("t2\\.micro|t2\\.medium", var.instance_type))
     error_message = "Only t2.micro and t2.medium are permited"
   }
 }
