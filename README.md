@@ -21,4 +21,4 @@ This repository contains a collection of Terraform modules designed to streamlin
 ### Working With AWS Resources
 ***Apply the module using the following source URL***
    ```bash
-   https://github.com/ayushnigam0001/terraformmodules.git//<directory-name>
+   git::https://github.com/ayushnigam0001/terraformmodules.git//<directory-name>
