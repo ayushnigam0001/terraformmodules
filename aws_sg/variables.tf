@@ -12,7 +12,7 @@ variable "sg_details" {
     from_port = number
     to_port = number
     protocol = string
-    cidr_block = string
+    cidr_block = list(string)
   }))
 }
 
