@@ -1,4 +1,4 @@
-# Terraform Modules Repository (gareebengineer)
+# Terraform Modules Repository by *gareebengineer*
 
 ## About the Author
 
