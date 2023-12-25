@@ -19,12 +19,6 @@ This repository contains a collection of Terraform modules designed to streamlin
    git clone https://github.com/ayushnigam0001/terraformmodules.git
 
 ### Working With AWS Resources
-
-Apply the module using the following source URL:
-```bash
-    https://github.com/ayushnigam0001/terraformmodules.git//<directory-name>
-
-###Example
-    ```bash
-    https://github.com/ayushnigam0001/terraformmodules.git//aws_ec2
-   
+***Apply the module using the following source URL***
+   ```bash
+   https://github.com/ayushnigam0001/terraformmodules.git//<directory-name>
