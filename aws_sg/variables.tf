@@ -6,7 +6,7 @@ variable "vpc_id" {
   }
 }
 
-variable "sg_details" {
+variable "inbound_ports" {
   type = list(object({
     description = string
     from_port = number
@@ -18,4 +18,15 @@ variable "sg_details" {
 
 variable "sg_server_name" {
   type = string
+}
+
+variable "additional_tags" {
+  type = map(string)
+  default = {}
+}
+
+locals {
+  basic_tags = tomap({
+    "Name" : "SG-${upper(var.sg_server_name)}"
+  })
 }
