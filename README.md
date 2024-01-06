@@ -16,9 +16,9 @@ This repository contains a collection of Terraform modules designed to streamlin
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/ayushnigam0001/terraformmodules.git
+   git clone https://github.com/ayushnigam0001/terraform-modules.git
 
 ### Working With AWS Resources
 ***Apply the module using the following source URL***
    ```bash
-   git::https://github.com/ayushnigam0001/terraformmodules.git//<directory-name>
+   git::https://github.com/ayushnigam0001/terraform-modules.git//<directory-name>
